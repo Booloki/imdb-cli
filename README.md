@@ -72,8 +72,7 @@ Then execute the saved command to fetch all the ratings: `./get_ratings.sh > rat
     
 ## Notes ##
 
- - requires Python 2.7+ (or earlier with installed argparse package)
- - for using it on Windows with Cygwin (which currently comes with Python 2.6) check out [this guide][cyg27]
+ - requires Python 3.X
  - **thanks to creator of this [great site called IM-D-BAPI][imdbapi]**
  
 I was aware of [this existing tool][fetcher] but unfortunately it was broken at the time I tried it. My implementation relies on the third-party API that handles up to 2 million queries a day, so it's safe to assume that it's author will be keeping it up to date. 
@@ -86,6 +85,5 @@ This tool is licensed under [GNU Lesser GPL][lgpl] license.
 
 
 [imdbapi]: http://www.imdbapi.com
-[cyg27]: http://www.tux.org/~mayer/cygwin/python/index.html
 [fetcher]: http://www.mutexes.org/imdb-movie-fetcher/
 [lgpl]: http://www.gnu.org/licenses/lgpl.html
