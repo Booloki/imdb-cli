@@ -1,5 +1,7 @@
+#!/usr/bin/python3
+
 import argparse
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import sys
 import json
 
@@ -24,23 +26,19 @@ if len(params) == 0:
   parser.print_usage()
   sys.exit()
 
-
 ### call IMDb API
-
-apicall = urllib.urlopen('http://www.imdbapi.com/?%s' % urllib.urlencode(params))
-result = apicall.read()
+apicall = urllib.request.urlopen('http://www.imdbapi.com/?%s' % urllib.parse.urlencode(params))
+result = apicall.readall().decode('utf-8')
 apicall.close()
 
 # print raw output and exit, if raw output was requested
 if args.r:
-  print result
+  print(result)
   sys.exit()
-  
 
 # print requested info
-
 data = json.loads(result)
 for k in data:
-  print k.lower() + ":"
-  print data[k].encode('utf-8')
-  print "\n"
+  print(k.lower() + ":")
+  print(data[k].encode('utf-8'))
+  print("\n")
