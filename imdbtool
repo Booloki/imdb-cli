@@ -27,8 +27,8 @@ if len(params) == 0:
   sys.exit()
 
 ### call IMDb API
-apicall = urllib.request.urlopen('http://www.imdbapi.com/?%s' % urllib.parse.urlencode(params))
-result = apicall.readall().decode('utf-8')
+apicall = urllib.request.urlopen('http://www.omdbapi.com/?%s' % urllib.parse.urlencode(params))
+result = apicall.read().decode('utf-8')
 apicall.close()
 
 # print raw output and exit, if raw output was requested
